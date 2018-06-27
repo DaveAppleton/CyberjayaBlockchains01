@@ -1,0 +1,71 @@
+
+//start REST OMIT
+pragma solidity ^0.4.24;
+
+contract tiny {
+
+	uint public number;
+
+	function set(uint num) public {
+		number = num;
+	}
+
+}
+//end REST OMIT
+0x8000000000000000000000000000000000000000000000000000000000000000
+//start RESTx OMIT
+pragma solidity ^0.4.23;
+
+contract tiny2{
+    uint public value;
+    
+    function add(uint num) public {
+        value += num;
+    }
+
+}
+//end RESTx OMIT
+
+0xaC373eABdc7214dC65b93372ECe425640cf31dC5
+
+//start skeleton OMIT
+[
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "num",
+				"type": "uint256"
+			}
+		],
+		"name": "set",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "number",
+		"ouiiiiii
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	}
+]
+//end skeleton OMIT
+
+
+	ownerTx, err = bind.NewTransactor(strings.NewReader(mainKey), ",3ePVWY2LnBEZYD")
+	if err != nil {
+		log.Printf("Failed to create authorized transactor: %v", err)
+		return false
+	}
+
+

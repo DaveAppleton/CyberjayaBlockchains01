@@ -1,0 +1,180 @@
+Ethereum smart contracts
+powering the new blockchain
+Tags: Ethereum, Solidity, Smart Contracts, Ruby Tuesdays
+
+Dave Appleton
+
+Lead Blockchain Developer, HelloGold
+
+Consultant with Akomba Labs
+
+email : calistralabs@gmail.com
+
+https://hellogold.com
+https://akomba.com
+
+Twitter : @AppletonDave
+
+* Just held
+
+.image ETHMALAYSIA.png
+
+ethereum malaysia
+
+ETHKL Genesis Block
+
+* Quick Intro / commercial break
+
+.image HG.png
+
+
+
+- HelloGold is platform to allow the average Malaysian to buy, store and sell investment grade gold at close to international spot prices as a means of diversifying their savings portfolio.
+- Founded by former CFO of World Gold Council
+- CTO is former VP of Bangkok Bank 
+- Partnering with AEON Credit and Axiata (Celcom)
+- Fully allocated gold vaulted in fully insured vault in Singapore
+- Developing a backend using Ethereum Smart Contracts 
+
+
+* What I AM going to cover
+- What is special about Ethereum?
+- Programming smart contracts
+- talking to contracts
+
+* So what is Ethereum doing differently?
+- The nodes are not just accounting machines
+- A transaction does not JUST have to transfer value
+- A transaction can *POST* a _contract_ * 
+- Another transaction can *call* that contract
+- Just like you *could* post a script and have it delivered to a script folder on a server
+- Ethereum becomes a distributed computer
+- code is compiled into byte code
+- byte code is placed on the blockchain
+- every node has a Virtual Machine (byte code interpreter)
+- users of the contract need to know the available entry points
+
+  * kinda like code injection
+* What is a contract?
+- bytecode
+- called a bit like RPC
+- like any program; it has
+-- instance data that is persistent
+-- methods with parameters and local data
+-- constructors
+-- it can hold value (ETH or tokens)
+-- it can send and receive ETH or tokens
+-- it is executed by *every* node to get consensus
+
+Consensus is the agreement on the transactions. 
+
+The effect is that the internal state will be the same on EVERY NODE.
+
+* Two ways to interact
+- *Calls*		
+-- query the state of the storage or the results of a calculation
+-- only executed on local node
+-- get an immediate response
+-- cannot change the state of the storage
+
+- *Transactions*
+-- make changes to the storage (and cost Ether)
+-- Executed on every node
+-- can only return results by _events_
+
+(caveat - one contract can transact on another *and* get returned data)
+
+If a transaction fails *ALL* changes are reversed and *NO* logs produced.
+
+* Why smart contracts?
+
+- The code is acessible from any node (of 25,000) on the network
+- No unauthorised person can modify it
+- authorisation is via address for which you have to control the private key
+- Different parties can be authorised, by address, for different functions.
+- All transactions are transparent, thus auditable
+
+* Accessible from ANY node?
+
+- nobody can shut it down except using functions explicitly built into that code
+- token
+- ICO 
+- EXCHANGE
+- "Town Crier" contracts
+
+* Features of a smart contract language
+
+- general purpose language
+- specific extensions to handle the blockchain stuff
+- protection from dangerous practices
+- verifiable so people can check what you are running
+
+.code demo_code.txt /start REST OMIT/,/end REST OMIT/
+
+* Some things to note in solidity
+
+- word size is 256 bits
+- NO overflow protection
+- Never use DEFAULT visibility
+
+.code demo_code.txt /start RESTx OMIT/,/end RESTx OMIT/
+
+lets try adding 
+0x8000000000000000000000000000000000000000000000000000000000000000
+
+* Security is essential
+
+- you don't get to edit the code
+- the language is constantly evolving
+- hackers are always looking for weaknesses
+- real value is often involved (ether/tokens)
+- the contract could control access to resources
+
+*big* *problems*
+
+DAO Hack
+Parity Multisig Hack
+Unimited Token minting / false burning
+Stuck ether
+Lost control
+
+* Accessing the smart contract
+
+- information to access the contract is stored in the ABI
+
+.code demo_code.txt /start skeleton OMIT/,/end skeleton OMIT/
+
+
+* Accessing the contract II
+
+- Remix
+- MyEtherWallet
+
+address : 0xaC373eABdc7214dC65b93372ECe425640cf31dC5
+
+.image mew.png _ 500
+
+* Accessing the contract III
+
+- Web3.js
+
+A javascript framework designed to allow you to access contracts on the ethereum blockchain
+while keeping all activity inside the browser. Metamask is a Web compliant wallet and can 
+sign transactions for submission to the blockchain
+
+(Remix / MEW / MyCrypto use Web3.js) 
+
+.link https://goldendave.github.io goldx checker
+
+.link https://zeattlabs.github.io/wolf.html send transactions
+
+.link https://ethen.market distributed exchange
+
+* Skills required for ethereum
+
+- Smart contract developers
+- Security Auditors
+- Ux / Ui designers / coders
+- Back end developers 
+
+.image suspects.jpg
